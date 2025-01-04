@@ -18,6 +18,9 @@ export class LiveloScraper
         }
         catch(err){
             console.log(err)
+            return {
+                Message: err.Message 
+            }   
         }
     }
 }
