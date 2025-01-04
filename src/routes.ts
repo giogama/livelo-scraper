@@ -1,23 +1,17 @@
-import { Router } from "express";
-//import { createUserController } from "./services/CreateUser";
-//import { scraperRRVController } from './services/01-ScrapperRRV';
+import { Router, Request, Response } from 'express';
+import { LiveloScraper } from './scrapers/LiveloScraper';
+import { IScraperResult } from './scrapers/IScraperResult';
 
 const router = Router();
 
-/*
 router.get('/', (req: Request, res: Response) => {
-    
-    return res.status(200).send("Livelo Scraper is active");
-});
-*/
-
-router.get('/livelo', (req, res) => {
-    
-    //return scraperRRVController.handle(req, res);
+    res.send('Is Active');
 });
 
-// router.post('/user', (req, res) => {
-//     return createUserController.handle(req, res);
-// });
+router.get('/livelo', async (req:Request, res:Response) => {
+    const scraper = new LiveloScraper();
+    const result:IScraperResult = await scraper.start();
+    res.status(200).json(result);
+});
 
 export { router };
