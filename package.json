@@ -1,0 +1,19 @@
+{
+  "name": "livelo-scraper",
+  "version": "1.0.0",
+  "description": "Captura todas as ofertas do site da Livelo",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsnd --transpile-only --respawn --ignore-watch node_modules ./src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
